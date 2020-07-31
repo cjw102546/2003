@@ -13,7 +13,7 @@
 </head>
 
 <body style="height :100%">
-<h1>111</h1>
+
   <div class="header">
     <div class="header-top w">
       <div class="header_top_box">
@@ -31,15 +31,15 @@
             <ul class="header_top_right_two">
 
 
-<li>1</li>
-<li>1</li>
-<li>1</li>
-<li>1</li>
-<li>1</li>
-<li>1</li>
-<li>1</li>
-<li>1</li>
-<li>1</li>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
+              <li>1</li>
 
 
             </ul>
@@ -67,10 +67,10 @@
           <li>保湿 |</li>
           <li>保湿 |</li>
           <li>保湿 |</li>
-          <li>保湿 |</li> 
           <li>保湿 |</li>
           <li>保湿 |</li>
-          <li>保湿 
+          <li>保湿 |</li>
+          <li>保湿
 
           </li>
         </ul>
@@ -109,8 +109,7 @@
 
   <!-- banner区 -->
   <div class="wrapBox">
-    <div class="left"></div>
-    <div class="right"></div>
+
     <ul class="swiperBox">
       <li class="show"><img src="../img/1.png" alt=""></li>
       <li><img src="../img/2.png" alt=""></li>
@@ -125,25 +124,80 @@
       <li></li>
     </ul>
   </div>
-<!-- 每日必看 -->
+  <!-- 每日必看 -->
 
-<div class="mustSee w">
-  <h2>
-   <img src="http://a5.jmstatic.com/c9533ddc6b064f8f/old_top_tit.jpg" alt="">
-  </h2>
-  <div class="mustSee2">
+  <div class="mustSee w">
+    <h2>
+      <img src="http://a5.jmstatic.com/c9533ddc6b064f8f/old_top_tit.jpg" alt="">
+    </h2>
+    <div class="mustSee2">
 
-    <h3>
-      <img src="../img/mustSee2.png" alt="">
-    </h3>
-    <p><img src="http://a1.jmstatic.com/14cf1eff35352616/clock.jpg" alt="">每日十点上新</p>
+      <h3>
+        <img src="../img/mustSee2.png" alt="">
+      </h3>
+      <p><img src="http://a1.jmstatic.com/14cf1eff35352616/clock.jpg" alt="">每日十点上新</p>
+    </div>
   </div>
-</div>
+
+  <!-- 商品数据 -->
+
+  <div class="goodsList w">
+
+    <ul>
+      <li>
+        <a href="">
+          <img src="../img/3.png" alt="">
+          <p class="title">【送玫瑰礼盒】迪奥Dior 烈艳蓝金唇膏口红3.5g 999#多色可选 </p>
+          <p class="price">￥148</p>
+
+        </a>
+      </li>
+
+
+    </ul>
+
+    <div class="float_right"></div>
+
+
+
+
+
+  </div>
 
 
 
 
 </body>
 <script src="../js/index.js"></script>
+<script>
+  $.ajax({
+    url: "../php/goodsList_1.php",
+    dataType: "json",
+    success(data) {
+      console.log(data);
+      var html = "";
+      data.forEach(({
+        goodsId,
+        goodsImg,
+        goodsImgList,
+        goodsName,
+        goodsPrice
+      }) => {
+        html += ` <li>
+                       <a href="">
+                           <img src="${goodsImg.replace("n5", "n1")}"
+                               alt="">
+                           <p class="price">￥${goodsPrice}</p>
+                           <p class="title">${goodsName}</p>
+                       </a>
+                   </li>`;
+      });
+      $(".goodsList ul").html(html);
+    },
+    // error(err) {
+    //     console.log(err);
+    // }
+  })
+</script>
 
 </html>
