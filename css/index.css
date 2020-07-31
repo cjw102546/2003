@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #f7f7f7;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #6c6c6c;
+}
+
+.cl:after {
+  content: '.';
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+body {
+  font: 12px/1.5 arial, 'Hiragino Sans GB', '\5FAE\8F6F\96C5\9ED1', sans-serif;
+}
+
+.w {
+  width: 1180px;
+  margin: auto;
+}
+
+.header {
+  width: 100%;
+  background-color: #ffff;
+}
+
+.header-top {
+  width: 100%;
+  zoom: 1;
+  background-color: #f2f2f2;
+  height: 28px;
+}
+
+.header_top_box {
+  margin: auto;
+  width: 1090px;
+  height: 28px;
+  line-height: 28px;
+  background-color: #f2f2f2;
+  color: #6c6c6c;
+}
+
+.header_top_left {
+  float: left;
+}
+
+.header_top_left li {
+  float: left;
+  margin-right: 20px;
+  display: inline;
+}
+
+.header_top_right {
+  float: right;
+}
+
+.header_top_right .myJum {
+  position: relative;
+}
+
+.header_top_right_two {
+  position: absolute;
+  width: 114px;
+  left: -18px;
+  height: 0;
+  display: none;
+  z-index: 999;
+  background-color: white;
+}
+
+.header_top_right .li1 {
+  float: left;
+  margin-right: 20px;
+  display: inline;
+}
+
+.header-center h1 {
+  float: left;
+}
+
+.header-centerIp {
+  width: 536px;
+  height: 82px;
+  float: left;
+  padding-top: 28px;
+  margin-left: 124px;
+}
+
+.header_search_input {
+  height: 18px;
+  border: solid #ed145b;
+  font-size: 12px;
+  color: #999;
+  outline: 0 none;
+  padding: 7px 5px;
+  width: 413px;
+  float: left;
+}
+
+.header_search_btn {
+  width: 100px;
+  height: 38px;
+  border: 0 none;
+  color: #fff;
+  font-size: 14px;
+  line-height: 38px;
+  float: left;
+  background-color: #ed145b;
+  cursor: pointer;
+}
+
+.hot_word {
+  float: left;
+  height: 18px;
+  margin-top: 6px;
+  width: 446px;
+  color: #999;
+}
+
+.hot_word li {
+  list-style: none;
+  float: left;
+  margin-right: 8px;
+}
+
+.cart_box {
+  float: right;
+  margin-top: 33px;
+  z-index: 8;
+}
+
+.cart_box .cart_gif {
+  float: left;
+  width: 28px;
+  height: 28px;
+  padding: 0 9px 0 9px;
+  border: solid 1px rgba(235, 228, 228, 0.836);
+}
+
+.cart_box .text {
+  width: 86px;
+  height: 32px;
+  line-height: 32px;
+  color: #666;
+  overflow: hidden;
+  float: left;
+  padding-left: 6px;
+  background-color: #f8f8f8;
+}
+
+.channel_nav_box {
+  width: 100%;
+  background-color: #000000;
+  height: 38px;
+  clear: both;
+}
+
+.channel_nav_box .channel_nav_list_wrap {
+  height: 38px;
+  margin: 0 auto;
+}
+
+.channel_nav_box .channel_nav_list_wrap .channel_nav_list li {
+  float: left;
+  line-height: 38px;
+}
+
+.channel_nav_box .channel_nav_list_wrap .channel_nav_list li .current {
+  background-color: #ed145b;
+}
+
+.channel_nav_box .channel_nav_list_wrap .channel_nav_list li a {
+  padding: 12px 40px;
+  color: #ffff;
+  font-weight: 500;
+}
+
+.cl:before,
+.cl:after {
+  display: table;
+  content: '';
+}
+
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.wrapBox {
+  width: 1920px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiperBox {
+  width: 11920px;
+  overflow: hidden;
+  /* !!!!!!!!!!!!!!!!!!!!!!!! */
+  position: absolute;
+}
+
+.swiperBox li {
+  width: 1920px;
+  /* display: none; */
+  text-align: center;
+  float: left;
+}
+
+.swiperBox li img {
+  width: 100%;
+  height: 350px;
+}
+
+.swiperBox .show {
+  display: block;
+}
+
+.dotBox {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.dotBox li {
+  width: 10px;
+  height: 10px;
+  float: left;
+  background-color: #9d9fa2;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.dotBox .active {
+  background-color: #f00;
+}
+
+.wrapBox .left,
+.wrapBox .right {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 9999;
+}
+
+.right {
+  right: 0;
+}
+
+.mustSee h2 {
+  width: 100%;
+  height: 28px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.mustSee .mustSee2 {
+  border-bottom: 2px solid #000;
+  position: relative;
+}
+
+.mustSee .mustSee2 h3 {
+  height: 26px;
+}
+
+.mustSee .mustSee2 p {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  color: #ed145b;
+  bottom: 5px;
+}
