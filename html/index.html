@@ -19,8 +19,8 @@
       <div class="header_top_box">
         <ul class="header_top_left">
           <li>欢迎来 到聚美！</li>
-          <li></li><a href="http://passport.jumei.com/i/account/login">快速注册</a></li>
-          <li><a href="http://passport.jumei.com/i/account/signup">请登录</a></li>
+          <li></li><a href="../html/login.html">请登录</a></li>
+          <li><a href="">快速注册</a></li>
         </ul>
 
         <ul class="header_top_right ">
@@ -154,19 +154,20 @@
       </li>
     </ul>
 
-    <div class="listser w">
-      <div class="box1 page w">
-      </div>
-      <div class="first"></div>
-      <div class="second"></div>
+    <div class="pageChangeBox">
+      <div class="pageBox"></div>
 
     </div>
+
+
+
   </div>
 
-  <div class="float_right">
+  <!-- <div class="float_right">
     <ul class="float_right1">
       <li class="li1"><a href=""><i class="iconfont iconhuaban361"></i></a></li>
-      <li class="li2"> <a href=""><i class="iconfont iconcaigoutonggerenbangaobaozhencaigou09 "></i></a>购<br>物<br>车</li>
+      <li class="li2"> <a href=""><i class="iconfont iconcaigoutonggerenbangaobaozhencaigou09 "></i></a>购<br>物<br>车
+      </li>
 
       <li class="li3"><a href="">
 
@@ -178,50 +179,135 @@
       <li class="li7"><a href=""><i class="iconfont iconkefu "></i></a></li>
       <li class="li8"><a href=""><i class="iconfont iconcc-top "></i></a></li>
     </ul>
-  </div>
+  </div> -->
 
 
-  < </body>
-    <script src="../js/index.js">
-    </script>
-    <script>
+</body>
+<script src="../js/index.js">
+</script>
+<script>
+  var key = "";
+  var orderCol = "id";
+  var orderType = "asc";
+  var showNum = 12;
+  var currentPage = 0;
+  // $.ajax({
+  //   url: "../php/goodsList_1.php",
+  //   dataType: "json",
+  //   success(data) {
+  //     console.log(data);
+  //     var html = "";
+  //     data.forEach(({
+  //       goodsId,
+  //       goodsImg,
+  //       goodsImgList,
+  //       goodsName,
+  //       goodsPrice
+  //     }) => {
+  //       html += ` <li>
+  //                  <a href="">
+  //                      <img src="${goodsImg.replace("n5", "n1")}"
+  //                          alt="">
+  //                      <p class="price">￥${goodsPrice}</p>
+  //                      <p class="title">${goodsName}</p>
+  //                  </a>
+  //              </li>`;
+  //     });
+  //     $(".goodsList ul").html(html);
+  //   },
+  //   // error(err) {
+  //   //     console.log(err);
+  //   // }
+  // })
+  // new Page(".box1", {
+  //   count: 100, //  数据的总数量
+  //   showNum: 10, //  每页显示多少条数据 
+  //   showPage: 5, //  默认显示多少页码
+
+  //   // callback(index) { // 页码改变时触发的回调函数
+  //   //     console.log(index);
+  //   // }
+  // })
+
+  // 搜索 排序 和改变showNum时重新调用此方法  => 重新生成分页 和 新的数据
+  searchDataAndPage();
+
+  // 查询数据  进行分页
+  function searchDataAndPage() {
+    getData().then(data => {
+      var { count, pageCountMax, list } = data;
+
+      new Page(".pageChangeBox .pageBox", {
+        count,
+        showNum,
+        showPage: 5,
+        callback(index) {
+          // console.log(index);
+          currentPage = index;
+          loadHtml();
+        }
+      })
+
+    }).catch(err => {
+      throw err;
+    });
+  }
+
+
+  // 查询数据  进行动态生成
+  function loadHtml() {
+    getData().then(data => {
+      var { count, currentPage, pageCountMax, list } = data;
+      console.log(data);
+      var html = "";
+      list.forEach(({ goodsId, goodsImg, goodsImgList, goodsName, goodsPrice }) => {
+        html += ` <li>
+                        <a href="./goodsDetail.html?gid=${goodsId}">
+                            <img src="${goodsImg.replace("n5", "n1")}"
+                                alt="">
+                            <p class="price">￥${goodsPrice}</p>
+                            <p class="title">${goodsName}</p>
+                        </a>
+                    </li>`;
+      });
+      $(".goodsList ul").html(html);
+
+    }).catch(err => {
+      throw err;
+    });
+  }
+
+
+
+
+
+
+
+  function getData() {
+    console.log(currentPage);
+    return new Promise(function (resolve, reject) {
       $.ajax({
-        url: "../php/goodsList_1.php",
+        url: "../php/goodsList.php",
+        data: {
+          key,
+          orderCol,
+          orderType,
+          currentPage,
+          showNum,
+        },
         dataType: "json",
         success(data) {
-          console.log(data);
-          var html = "";
-          data.forEach(({
-            goodsId,
-            goodsImg,
-            goodsImgList,
-            goodsName,
-            goodsPrice
-          }) => {
-            html += ` <li>
-                       <a href="">
-                           <img src="${goodsImg.replace("n5", "n1")}"
-                               alt="">
-                           <p class="price">￥${goodsPrice}</p>
-                           <p class="title">${goodsName}</p>
-                       </a>
-                   </li>`;
-          });
-          $(".goodsList ul").html(html);
+          resolve(data);
         },
-        // error(err) {
-        //     console.log(err);
-        // }
+        error(err) {
+          console.log(err);
+          reject(err);
+        }
       })
-      new Page(".box1", {
-        count: 100, //  数据的总数量
-        showNum: 10, //  每页显示多少条数据 
-        showPage: 5, //  默认显示多少页码
+    })
+  }
 
-        // callback(index) { // 页码改变时触发的回调函数
-        //     console.log(index);
-        // }
-      })
-    </script>
+
+</script>
 
 </html>

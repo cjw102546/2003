@@ -319,7 +319,9 @@ body {
   width: 329px;
 }
 
-.listser .page {
+.pageChangeBox .page {
+  width: 421px;
+  height: 37px;
   line-height: 36px;
   text-align: center;
   overflow: hidden;
@@ -330,21 +332,21 @@ body {
   margin-top: 70px;
 }
 
-.listser .page .prev,
-.listser .page .pageBox,
-.listser .page .next {
+.pageChangeBox .page .prev,
+.pageChangeBox .page .pageBox,
+.pageChangeBox .page .next {
   float: left;
 }
 
-.listser .page .prev,
-.listser .page .next {
+.pageChangeBox .page .prev,
+.pageChangeBox .page .next {
   width: 88px;
   border: 1px solid #e1e2e3;
   background-color: red;
   color: white;
 }
 
-.listser .page .pageBox li {
+.pageChangeBox .page .pageBox li {
   width: 36px;
   border: 1px solid red;
   float: left;
@@ -352,7 +354,7 @@ body {
   color: black;
 }
 
-.listser .page .pageBox .active {
+.pageChangeBox .page .pageBox .active {
   color: white;
   border-color: transparent;
   background-color: red;

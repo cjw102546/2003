@@ -1,5 +1,5 @@
 <?php
-    @include_once("conn.php");
+    @include_once("./conn.php");
 
     $key = $_GET["key"];
     $orderCol = $_GET["orderCol"];
@@ -68,5 +68,3 @@
     $all["list"] = $list;
     
     echo json_encode($all);
-
-?>

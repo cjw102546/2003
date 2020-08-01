@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <script src="../js/jquery-3.1.1.min.js"></script>
+
+</head>
+
+<body>
+  <!-- 头部 -->
+
+  <div class="header">
+
+    <div class="header1 w">
+      <h1><img src="../img/4.png" alt=""></h1>
+      <div>
+        <img src="../img/5.png" alt="">
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 登录页面 -->
+  <div class="sign">
+
+    <div class="login">
+
+      <div class="loginWrap w ">
+
+        <div class="loginImage"></div>
+
+
+        <div class="loginBord">
+          <div class="box">
+            <p><a href="">没有账号?注册一个!</a></p>
+            <div class="box1">
+
+              <dl>
+                <dd>
+
+                  <input id='username' type="text" placeholder="会员名/邮箱/手机号">
+                </dd>
+                <dd>
+
+                  <input id='password' type="text" placeholder="请输入登录密码">
+                </dd>
+              </dl>
+              <button id='login'>登录</button>
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+</body>
+
+<script>
+  var oButton = document.querySelector('#login');
+  var oUserName = document.querySelector('#username');
+  var oPassword = document.querySelector('#password');
+
+  oButton.onclick = function () {
+    var username = oUserName.value;
+    var password = oPassword.value;
+
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', `http://www.2003.com/project/php/15dl.php?username=${username}&password=${password}`);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        // console.log(xhr.responseText);
+        var {
+          code,
+          msg,
+          data
+        } = JSON.parse(xhr.responseText);
+
+        if (code) {
+          alert('登录成功');
+          location.href = './index.html';
+        } else {
+          alert(msg);
+        }
+      }
+    }
+    xhr.send();
+  }
+</script>
+
+</html>
