@@ -30,7 +30,7 @@ body {
 }
 
 .w {
-  width: 1180px;
+  width: 1090px;
   margin: auto;
 }
 
@@ -74,13 +74,18 @@ body {
 }
 
 .header_top_right_two {
+  text-align: center;
   position: absolute;
   width: 114px;
-  left: -18px;
+  left: -65px;
   height: 0;
   display: none;
   z-index: 999;
   background-color: white;
+}
+
+.header_top_right_two li {
+  margin: 2px 0;
 }
 
 .header_top_right .li1 {
@@ -285,6 +290,7 @@ body {
 }
 
 .mustSee .mustSee2 h3 {
+  width: 1190px;
   height: 26px;
 }
 
@@ -300,7 +306,7 @@ body {
   margin-top: 20px;
 }
 
-.goodsList ul li {
+.goodsList .goodsList1 li {
   width: 329px;
   height: 450px;
   background-color: #fff;
@@ -311,6 +317,45 @@ body {
 
 .goodsList img {
   width: 329px;
+}
+
+.listser .page {
+  line-height: 36px;
+  text-align: center;
+  overflow: hidden;
+  color: #38f;
+  padding: 5px;
+  user-select: none;
+  margin-left: 420px;
+  margin-top: 70px;
+}
+
+.listser .page .prev,
+.listser .page .pageBox,
+.listser .page .next {
+  float: left;
+}
+
+.listser .page .prev,
+.listser .page .next {
+  width: 88px;
+  border: 1px solid #e1e2e3;
+  background-color: red;
+  color: white;
+}
+
+.listser .page .pageBox li {
+  width: 36px;
+  border: 1px solid red;
+  float: left;
+  margin: 0 5px;
+  color: black;
+}
+
+.listser .page .pageBox .active {
+  color: white;
+  border-color: transparent;
+  background-color: red;
 }
 
 .title {
@@ -337,4 +382,55 @@ body {
   right: 0;
   top: 0;
   background-color: #444851;
+}
+
+.float_right i {
+  font-size: 23px;
+  color: #d8d8d8;
+}
+
+.float_right .li1 {
+  margin-top: 200px;
+  padding-left: 9px;
+}
+
+.float_right .li2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.float_right .li2 a {
+  font-size: 18px;
+  margin-left: 6px;
+}
+
+.float_right .li3 {
+  padding-left: 9px;
+  margin-bottom: 8px;
+}
+
+.float_right .li4 {
+  padding-left: 9px;
+  margin-bottom: 8px;
+}
+
+.float_right .li5 {
+  padding-left: 9px;
+  margin-bottom: 280px;
+}
+
+.float_right .li6 {
+  padding-left: 9px;
+  margin-bottom: 8px;
+}
+
+.float_right .li7 {
+  padding-left: 9px;
+  margin-bottom: 8px;
+}
+
+.float_right .li8 {
+  padding-left: 9px;
+  margin-bottom: 8px;
 }

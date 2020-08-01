@@ -10,6 +10,9 @@ $('.header a').hover(
     });
   }
 );
+$('.lio a ').css({
+  color: '#ed145b'
+})
 $('.hot_word li').hover(
   function () {
     $(this).css({
@@ -26,22 +29,32 @@ $('.hot_word li').hover(
 $('.myJum').hover(
 
   function () {
-    $('.header_top_right_two').css({
+
+    $('.myJum').css({
+      background: "#fff"
+    })
+    $('.header_top_right_two').animate({
 
       height: '270px',
-      display: 'block',
-      transition: "2s"
+
+    }).css({
+      display: "block"
     })
   },
   function () {
-    $('.header_top_right_two').css({
 
-        height: '270px',
-        display: 'none',
+    $('.myJum').css({
+      background: "#f2f2f2"
+    })
+    $('.header_top_right_two').animate({
+
+        height: '0',
 
       }
 
-    )
+    ).css({
+      display: "none"
+    })
   }
 
 
@@ -113,3 +126,16 @@ function swiper() {
     $(".dotBox li").eq(index).addClass("active").siblings().removeClass("active");
   }
 }
+//右侧导航栏
+$('.float_right1 li').hover(
+  function () {
+    $(this).css({
+      background: '#ed145b',
+    });
+  },
+  function () {
+    $(this).css({
+      background: '#444851',
+    });
+  }
+);

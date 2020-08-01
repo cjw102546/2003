@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_1979579_4mfnastzf09.css">
   <link rel="stylesheet" type="text/css" href="../css/index.css" />
   <script src="../js/jquery-3.1.1.min.js"></script>
-
+  <script src="../js/Page.js"></script>
   <title>Document</title>
   <style></style>
 </head>
@@ -18,7 +18,7 @@
     <div class="header-top w">
       <div class="header_top_box">
         <ul class="header_top_left">
-          <li>欢迎来到聚美！</li>
+          <li>欢迎来 到聚美！</li>
           <li></li><a href="http://passport.jumei.com/i/account/login">快速注册</a></li>
           <li><a href="http://passport.jumei.com/i/account/signup">请登录</a></li>
         </ul>
@@ -31,21 +31,21 @@
             <ul class="header_top_right_two">
 
 
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
-              <li>1</li>
+              <li>我的订单</li>
+              <li>我的香蕉卷</li>
+              <li>我的红包</li>
+              <li>我的余额</li>
+              <li>我的收藏</li>
+              <li>我的退款</li>
+              <li>会员中心</li>
+              <li>我的礼品卡</li>
+              <li>我的心愿单</li>
 
 
             </ul>
 
           </li>
-          <li class="li1"><a href="">手机聚美</a></li>
+          <li class="li1 lio"><a href=""><i class="iconfont iconshouji"></i>手机聚美</a></li>
           <li class="li1">|</li>
           <li class="li1"><a href="">更多</a></li>
         </ul>
@@ -143,7 +143,7 @@
 
   <div class="goodsList w">
 
-    <ul>
+    <ul class="goodsList1">
       <li>
         <a href="">
           <img src="../img/3.png" alt="">
@@ -152,38 +152,53 @@
 
         </a>
       </li>
-
-
     </ul>
 
-    <div class="float_right"></div>
+    <div class="listser w">
+      <div class="box1 page w">
+      </div>
+      <div class="first"></div>
+      <div class="second"></div>
 
+    </div>
+  </div>
 
+  <div class="float_right">
+    <ul class="float_right1">
+      <li class="li1"><a href=""><i class="iconfont iconhuaban361"></i></a></li>
+      <li class="li2"> <a href=""><i class="iconfont iconcaigoutonggerenbangaobaozhencaigou09 "></i></a>购<br>物<br>车</li>
 
+      <li class="li3"><a href="">
 
-
+          <i class="iconfont icon5-aixin"></i>
+        </a></li>
+      <li class="li4"><a href=""><i class="iconfont iconqianbao"></i></a></li>
+      <li class="li5"><a href=""><i class="iconfont iconjiaoyin"></i></a></li>
+      <li class="li6"><a href=""><i class="iconfont iconico"></i></a></li>
+      <li class="li7"><a href=""><i class="iconfont iconkefu "></i></a></li>
+      <li class="li8"><a href=""><i class="iconfont iconcc-top "></i></a></li>
+    </ul>
   </div>
 
 
-
-
-</body>
-<script src="../js/index.js"></script>
-<script>
-  $.ajax({
-    url: "../php/goodsList_1.php",
-    dataType: "json",
-    success(data) {
-      console.log(data);
-      var html = "";
-      data.forEach(({
-        goodsId,
-        goodsImg,
-        goodsImgList,
-        goodsName,
-        goodsPrice
-      }) => {
-        html += ` <li>
+  < </body>
+    <script src="../js/index.js">
+    </script>
+    <script>
+      $.ajax({
+        url: "../php/goodsList_1.php",
+        dataType: "json",
+        success(data) {
+          console.log(data);
+          var html = "";
+          data.forEach(({
+            goodsId,
+            goodsImg,
+            goodsImgList,
+            goodsName,
+            goodsPrice
+          }) => {
+            html += ` <li>
                        <a href="">
                            <img src="${goodsImg.replace("n5", "n1")}"
                                alt="">
@@ -191,13 +206,22 @@
                            <p class="title">${goodsName}</p>
                        </a>
                    </li>`;
-      });
-      $(".goodsList ul").html(html);
-    },
-    // error(err) {
-    //     console.log(err);
-    // }
-  })
-</script>
+          });
+          $(".goodsList ul").html(html);
+        },
+        // error(err) {
+        //     console.log(err);
+        // }
+      })
+      new Page(".box1", {
+        count: 100, //  数据的总数量
+        showNum: 10, //  每页显示多少条数据 
+        showPage: 5, //  默认显示多少页码
+
+        // callback(index) { // 页码改变时触发的回调函数
+        //     console.log(index);
+        // }
+      })
+    </script>
 
 </html>
