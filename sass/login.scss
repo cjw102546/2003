@@ -52,24 +52,20 @@ body {
       float: right;
       padding-top: 35px;
     }
-
   }
 }
 
 //登录页面
 .sign {
-
   .login {
     margin-top: 50px;
     height: 446px;
-
   }
 
   .loginWrap {
     position: relative;
 
     .loginImage {
-
       width: 960px;
       height: 360px;
       // position: absolute;
@@ -81,11 +77,260 @@ body {
 
       top: 10px;
       right: 0;
-      height: 300px;
-      width: 200px;
-      background-color: red;
-      z-index: 99999;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.075);
+      height: 450px;
+      width: 350px;
+
+      .box_head {
+        height: 60px;
+
+        h1 {
+          font-size: 20px;
+          float: left;
+          font-weight: 600;
+          color: #e31256;
+          margin-top: 20px;
+          margin-left: 15px;
+        }
+
+        p {
+          float: right;
+          margin-top: 25px;
+          margin-right: 15px;
+
+          span {
+            color: #e31256;
+          }
+        }
+      }
+
+      //input样式
+
+      .box {
+        label {
+          display: inline-block;
+          width: 80px;
+          text-align: right;
+        }
+
+        form {
+          background-color: #ffffff;
+          padding: 19px;
+          border-radius: 10px;
+          #user {
+            padding-left: 38px;
+            width: 240px;
+          }
+          #pwd {
+            padding-left: 38px;
+            width: 240px;
+          }
+
+          .d1,
+          .d2 {
+            span {
+              display: block;
+
+              font-size: 12px;
+              color: #999;
+              padding-left: 5px;
+              white-space: nowrap;
+              margin-top: 4px;
+            }
+          }
+
+          .d1 {
+            position: relative;
+            p {
+              position: absolute;
+              left: 10px;
+              top: 10px;
+            }
+          }
+
+          .d2 {
+            position: relative;
+            p {
+              position: absolute;
+              left: 10px;
+              top: 6px;
+            }
+          }
+
+          .d3 {
+            height: 15px;
+            margin: 30px 0;
+            span {
+              line-height: 15px;
+            }
+            p {
+              float: right;
+            }
+          }
+          .d4 {
+            // #logBtn {
+            //   font-family: inherit;
+            //   word-break: keep-all;
+            //   text-align: center;
+            //   line-height: 40px;
+            //   font-weight: 700;
+            //   font-size: 14px;
+            //   cursor: pointer;
+            //   padding: 0 30px;
+            //   height: 40px;
+            //   color: #ffff;
+            //   border: 0;
+            //   width: 100%;
+            //   background: #f8296d;
+            // }
+
+            .btn-5 {
+              font-size: 18px;
+              width: 200px;
+              height: 40px;
+              line-height: 42px;
+              padding: 0;
+              border: none;
+              background: #f8296d;
+              background: linear-gradient(
+                0deg,
+                rgba(255, 27, 0, 1) 0%,
+                rgba(251, 75, 2, 1) 100%
+              );
+            }
+            .btn-5:hover {
+              background: #f8296d;
+              color: #f0094a;
+              background: transparent;
+              box-shadow: none;
+            }
+            .btn-5:before,
+            .btn-5:after {
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 0;
+              height: 2px;
+              width: 0;
+              background: #f0094a;
+              box-shadow: -1px -1px 5px 0px #f0094a,
+                7px 7px 20px 0px rgba(0, 0, 0, 0.2),
+                4px 4px 5px 0px rgba(15, 11, 11, 0.133);
+              transition: 400ms ease all;
+            }
+            .btn-5:after {
+              right: inherit;
+              top: inherit;
+              left: 0;
+              bottom: 0;
+            }
+            .btn-5:hover:before,
+            .btn-5:hover:after {
+              width: 100%;
+              transition: 800ms ease all;
+            }
+          }
+        }
+
+        form > div > input[type='text'] {
+          box-shadow: none;
+          border: 1px solid #cfcfcf;
+          background-color: #fff;
+          vertical-align: middle;
+          padding: 10px 8px;
+          line-height: 1.5;
+          font-size: 14px;
+          outline: 0;
+          height: auto;
+        }
+
+        div .randCode {
+          display: inline-block;
+          margin-left: 0;
+        }
+
+        form > div:nth-last-child(1) {
+          text-align: center;
+        }
+
+        form > div:nth-last-child(1) > button {
+          margin-right: 30px;
+        }
+
+        .right {
+          color: green;
+        }
+
+        .err {
+          color: red;
+        }
+      }
+      .iconAccout {
+        div {
+          margin-top: 25px;
+          margin-left: 80px;
+        }
+
+        p {
+          font-family: Tahoma, Geneva, sans-serif;
+          font-size: 12px;
+          line-height: 1.5;
+          color: #333;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          zoom: 1;
+          margin-bottom: 15px;
+          margin-top: 20px;
+          margin-left: 30px;
+
+          a {
+            font-family: Tahoma, Geneva, sans-serif;
+            font-size: 12px;
+            line-height: 1.5;
+            text-decoration: none;
+            text-indent: -9999px;
+            background-image: url(../img/icon_light.jpg);
+            background-repeat: no-repeat;
+            display: inline-block;
+            width: 43px;
+            height: 43px;
+            float: left;
+            margin-right: 10px;
+            color: inherit;
+            background-position: 0 0;
+          }
+
+          .a1 {
+            background-position: 0 0;
+          }
+
+          .a2 {
+            background-position: -57px 0;
+          }
+
+          .a3 {
+            background-position: -114px 0;
+          }
+
+          .a4 {
+            background-position: -169px 0;
+          }
+
+          .a4 {
+            background-position: -224px 0;
+          }
+        }
+      }
     }
   }
+}
 
+.bottom1 {
+  .bottom {
+    background-color: #ffffff;
+    margin-left: 520px;
+    margin-top: 100px;
+  }
 }

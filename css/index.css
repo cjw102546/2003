@@ -59,6 +59,10 @@ body {
   float: left;
 }
 
+.header_top_left .heads {
+  color: red;
+}
+
 .header_top_left li {
   float: left;
   margin-right: 20px;
@@ -147,12 +151,13 @@ body {
   float: right;
   margin-top: 33px;
   z-index: 8;
+  background-color: #ffff;
 }
 
 .cart_box .cart_gif {
   float: left;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   padding: 0 9px 0 9px;
   border: solid 1px rgba(235, 228, 228, 0.836);
 }
@@ -165,7 +170,7 @@ body {
   overflow: hidden;
   float: left;
   padding-left: 6px;
-  background-color: #f8f8f8;
+  background-color: #ffff;
 }
 
 .channel_nav_box {

@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #f3f0f2;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #6c6c6c;
+}
+
+body {
+  font: 12px/1.5 arial, 'Hiragino Sans GB', '\5FAE\8F6F\96C5\9ED1', sans-serif;
+}
+
+.w {
+  width: 1290px;
+  margin: auto;
+}
+
+.header {
+  min-width: 960px;
+  background-color: #fff;
+}
+
+.header .header1 {
+  height: 85px;
+  background-color: #fff;
+}
+
+.header .header1 h1 {
+  float: left;
+  margin-top: 5px;
+}
+
+.header .header1 div {
+  float: right;
+  padding-top: 35px;
+}
+
+.shop1 {
+  text-align: center;
+}
+
+.shop1 h1 {
+  color: #c9c9c9;
+  font-size: 28px;
+  margin-bottom: 50px;
+}
+
+.shop1 p {
+  background-color: #ed145b;
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  font-size: 28px;
+}
+
+.shop1 p a {
+  color: #ffffff;
+}
+
+.bottom1 .bottom {
+  background-color: #ffffff;
+  margin-left: 520px;
+  margin-top: 300px;
+}
+
+#foot #deleteAll {
+  width: 100px;
+  text-align: center;
+}
+
+.catbox table th {
+  height: 60px;
+  background: #ed145b;
+  color: #ffffff;
+  border-top: 3px solid #2bc4b7;
+}
+
+.catbox table td {
+  padding: 10px;
+}
+
+.foot {
+  background-image: red;
+}

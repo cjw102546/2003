@@ -73,8 +73,235 @@ body {
   position: absolute;
   top: 10px;
   right: 0;
-  height: 300px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.075);
+  height: 450px;
+  width: 350px;
+}
+
+.sign .loginWrap .loginBord .box_head {
+  height: 60px;
+}
+
+.sign .loginWrap .loginBord .box_head h1 {
+  font-size: 20px;
+  float: left;
+  font-weight: 600;
+  color: #e31256;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.sign .loginWrap .loginBord .box_head p {
+  float: right;
+  margin-top: 25px;
+  margin-right: 15px;
+}
+
+.sign .loginWrap .loginBord .box_head p span {
+  color: #e31256;
+}
+
+.sign .loginWrap .loginBord .box label {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+}
+
+.sign .loginWrap .loginBord .box form {
+  background-color: #ffffff;
+  padding: 19px;
+  border-radius: 10px;
+}
+
+.sign .loginWrap .loginBord .box form #user {
+  padding-left: 38px;
+  width: 240px;
+}
+
+.sign .loginWrap .loginBord .box form #pwd {
+  padding-left: 38px;
+  width: 240px;
+}
+
+.sign .loginWrap .loginBord .box form .d1 span,
+.sign .loginWrap .loginBord .box form .d2 span {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  padding-left: 5px;
+  white-space: nowrap;
+  margin-top: 4px;
+}
+
+.sign .loginWrap .loginBord .box form .d1 {
+  position: relative;
+}
+
+.sign .loginWrap .loginBord .box form .d1 p {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.sign .loginWrap .loginBord .box form .d2 {
+  position: relative;
+}
+
+.sign .loginWrap .loginBord .box form .d2 p {
+  position: absolute;
+  left: 10px;
+  top: 6px;
+}
+
+.sign .loginWrap .loginBord .box form .d3 {
+  height: 15px;
+  margin: 30px 0;
+}
+
+.sign .loginWrap .loginBord .box form .d3 span {
+  line-height: 15px;
+}
+
+.sign .loginWrap .loginBord .box form .d3 p {
+  float: right;
+}
+
+.sign .loginWrap .loginBord .box form .d4 .btn-5 {
+  font-size: 18px;
   width: 200px;
-  background-color: red;
-  z-index: 99999;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: #f8296d;
+  background: linear-gradient(0deg, #ff1b00 0%, #fb4b02 100%);
+}
+
+.sign .loginWrap .loginBord .box form .d4 .btn-5:hover {
+  background: #f8296d;
+  color: #f0094a;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sign .loginWrap .loginBord .box form .d4 .btn-5:before,
+.sign .loginWrap .loginBord .box form .d4 .btn-5:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #f0094a;
+  box-shadow: -1px -1px 5px 0px #f0094a, 7px 7px 20px 0px rgba(0, 0, 0, 0.2), 4px 4px 5px 0px rgba(15, 11, 11, 0.133);
+  transition: 400ms ease all;
+}
+
+.sign .loginWrap .loginBord .box form .d4 .btn-5:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.sign .loginWrap .loginBord .box form .d4 .btn-5:hover:before,
+.sign .loginWrap .loginBord .box form .d4 .btn-5:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+.sign .loginWrap .loginBord .box form > div > input[type='text'] {
+  box-shadow: none;
+  border: 1px solid #cfcfcf;
+  background-color: #fff;
+  vertical-align: middle;
+  padding: 10px 8px;
+  line-height: 1.5;
+  font-size: 14px;
+  outline: 0;
+  height: auto;
+}
+
+.sign .loginWrap .loginBord .box div .randCode {
+  display: inline-block;
+  margin-left: 0;
+}
+
+.sign .loginWrap .loginBord .box form > div:nth-last-child(1) {
+  text-align: center;
+}
+
+.sign .loginWrap .loginBord .box form > div:nth-last-child(1) > button {
+  margin-right: 30px;
+}
+
+.sign .loginWrap .loginBord .box .right {
+  color: green;
+}
+
+.sign .loginWrap .loginBord .box .err {
+  color: red;
+}
+
+.sign .loginWrap .loginBord .iconAccout div {
+  margin-top: 25px;
+  margin-left: 80px;
+}
+
+.sign .loginWrap .loginBord .iconAccout p {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  zoom: 1;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.sign .loginWrap .loginBord .iconAccout p a {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: none;
+  text-indent: -9999px;
+  background-image: url(../img/icon_light.jpg);
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 43px;
+  height: 43px;
+  float: left;
+  margin-right: 10px;
+  color: inherit;
+  background-position: 0 0;
+}
+
+.sign .loginWrap .loginBord .iconAccout p .a1 {
+  background-position: 0 0;
+}
+
+.sign .loginWrap .loginBord .iconAccout p .a2 {
+  background-position: -57px 0;
+}
+
+.sign .loginWrap .loginBord .iconAccout p .a3 {
+  background-position: -114px 0;
+}
+
+.sign .loginWrap .loginBord .iconAccout p .a4 {
+  background-position: -169px 0;
+}
+
+.sign .loginWrap .loginBord .iconAccout p .a4 {
+  background-position: -224px 0;
+}
+
+.bottom1 .bottom {
+  background-color: #ffffff;
+  margin-left: 520px;
+  margin-top: 100px;
 }

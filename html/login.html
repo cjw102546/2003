@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="../css/login.css">
+  <script src="../js/common.js"></script>
   <script src="../js/jquery-3.1.1.min.js"></script>
 
 </head>
@@ -35,27 +36,63 @@
         <div class="loginImage"></div>
 
 
+
         <div class="loginBord">
+
           <div class="box">
-            <p><a href="">没有账号?注册一个!</a></p>
-            <div class="box1">
+            <div class="box_head">
+              <h1>登录聚美</h1>
+              <p><a href="../html/zhuche.html">还没有聚美账号?<span>30秒注册!</span></a></p>
+            </div>
 
-              <dl>
-                <dd>
+            <form action="" onsubmit="return false">
+              <div class="d1">
+                <!-- <label for="user">用户名</label> -->
 
-                  <input id='username' type="text" placeholder="会员名/邮箱/手机号">
-                </dd>
-                <dd>
+                <input id="user" type="text" placeholder="已验证手机/邮箱/用户名">
+                <p><img src="../img/user.png" alt=""></p>
+                <span class="user_span">登录名可能是您的手机号、邮箱或用户名</span>
+              </div>
+              <div class="d2">
+                <!-- <label for="pwd">密码:</label> -->
 
-                  <input id='password' type="text" placeholder="请输入登录密码">
-                </dd>
-              </dl>
-              <button id='login'>登录</button>
+                <p><img src="../img/pwd.png" alt=""></p> <input id="pwd" type="text" placeholder="密码">
+                <span class="pwd_span">您的密码可能为字母、数字或符号的组合</span>
+              </div>
+
+              <div class="d3">
+                <input id="remPwd" type="checkbox">
+                <span>自动登录</span>
+                <p><a href="">忘记密码?</a></p>
+
+
+              </div>
+
+              <div class="d4">
+                <button class="btn-5">登录</button>
+                <!-- <input type="reset"> -->
+              </div>
+            </form>
+
+            <div class="iconAccout">
+              <div>你也可以使用以下帐号登录</div>
+              <p>
+                <a href="/i/extconnect/?site_name=cb_qq&amp;redirect=http%3A%2F%2Fgz.jumei.com%2F" class="a1"
+                  title="QQ">QQ</a>
+                <a href="/i/extconnect/?site_name=alipay&amp;redirect=http%3A%2F%2Fgz.jumei.com%2F" class="a2"
+                  title="支付宝">支付宝</a>
+                <a href="/i/extconnect/?site_name=sina_weibo&amp;redirect=http%3A%2F%2Fgz.jumei.com%2F" class="a3"
+                  title="新浪微博">新浪微博</a>
+                <a href="/i/extconnect/?referer=360tuan_dh&amp;site_name=site_360&amp;redirect=http%3A%2F%2Fgz.jumei.com%2F"
+                  class="a4" title="360">360</a>
+                <a href="/i/extconnect/?site_name=baidu&amp;redirect=http%3A%2F%2Fgz.jumei.com%2F" class="a5"
+                  title="百度">百度</a>
+
+              </p>
 
             </div>
 
           </div>
-
 
 
         </div>
@@ -63,41 +100,96 @@
       </div>
 
 
-    </div>
 
+
+    </div>
+    <!-- //底部 -->
+    <div class="bottom1">
+      <div class="bottom w">
+        <img src="../img/6.png" alt="">
+      </div>
+    </div>
 </body>
 
 <script>
-  var oButton = document.querySelector('#login');
-  var oUserName = document.querySelector('#username');
-  var oPassword = document.querySelector('#password');
 
-  oButton.onclick = function () {
-    var username = oUserName.value;
-    var password = oPassword.value;
 
+
+  var form = document.getElementsByTagName("form")[0];
+  var pwdInp = document.getElementById("pwd");
+  var randCode = document.getElementsByClassName("randCode")[0];
+  var logBtn = document.getElementById("logBtn");
+
+  var userInp = document.getElementById("user");
+  var userSpan = document.getElementById("user_span");
+  var pwdInp = document.getElementById("pwd");
+  var pwdSpan = document.getElementById("pwd_span");
+  var remPwd = document.getElementById("remPwd");
+
+
+
+  var isUserRight = false;
+  var isPwdRight = false;
+
+  logBtn.onclick = function () {
+    // 登录时获取的用户名 / 密码
+    var user = userInp.value;  // 账号
+    var pwd = pwdInp.value;
 
     var xhr = new XMLHttpRequest();
-    xhr.open('get', `http://www.2003.com/project/php/15dl.php?username=${username}&password=${password}`);
+
+    xhr.open("post", "http://www.2003.com/project/php/login.php", true);
+
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.send("account=" + user + "&pwd=" + pwd);
+
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
-        // console.log(xhr.responseText);
-        var {
-          code,
-          msg,
-          data
-        } = JSON.parse(xhr.responseText);
+        setCookie("logUser", user, 7);
 
-        if (code) {
-          alert('登录成功');
-          location.href = './index.html';
+        console.log(xhr.responseText);
+        var data = JSON.parse(xhr.responseText);
+        if (data.status) {
+          location.href = "./index.html";
         } else {
-          alert(msg);
+          alert(data.msg);
         }
       }
+
     }
-    xhr.send();
+
+
+
+
+
+
   }
+
+
+
+
+  function prev(ele) {
+    return ele.previousElementSibling || ele.previousSibling;
+  }
+
+
+  function next(ele) {
+    return ele.nextElementSibling || ele.nextSibling;
+  }
+
+  function getCode() {
+    var str = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+    var newStr = "";
+    for (var i = 0; i < 4; i++) {
+      var index = Math.floor(Math.random() * str.length);
+      newStr += str.charAt(index);
+    }
+    return newStr;
+  }
+
+
+
 </script>
 
 </html>

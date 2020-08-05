@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://activity.dapuimg.com/bootstrap.min.css">
+  <link rel="stylesheet" href="http://s.dapuimg.com/themes/blue/images/css/dapu_all_min.css?utime=07102">
+  <link rel="stylesheet" href="http://s.dapuimg.com/themes/blue/images/css/jiaju_shoppingcart.css?utime=07101">
+  <link rel="stylesheet" href="../css/city-picker.css">
+  <link rel="stylesheet" href="../css/cash.css">
+</head>
+
+<body class="SCStep1" style="background: none repeat scroll 0 0 transparent;">
+
+
+
+  <div class="header">
+
+    <div class="header1 w">
+      <h1><img src="../img/4.png" alt=""></h1>
+      <div>
+        <img src="../img/5.png" alt="">
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <link rel="stylesheet" href="http://www.dapu.com/themes/blue/images/css/dapu_checkout.css?utime=07103">
+  <input type="hidden" id="cookie_payinfo" value="">
+  <div class="header clearfix">
+
+    <ol class="processNav">
+      <li class="step1">1、我的购物车<b class="extra"></b></li>
+      <li class="step2 on">2、填写核对订单信息<b class="extra"></b></li>
+      <li class="step3">3、成功提交订单</li>
+    </ol>
+  </div>
+  <form method="post" action="/order-create.html" id="order-create">
+    <div class="orders_page">
+      <div class="fl_box dp_border_2" id="addr_box">
+        <div class="new_order_fl_title" id="new_shrxx_title">
+          <span>收货人信息</span>
+          <a class="fl_update" id="receiver_info" onclick="addr_update(this)" style="display: none;">修改</a>
+          <a class="fl_update" id="cancel_receiver_info" onclick="addr_cancel(this)" style="display: none;">取消修改</a>
+        </div>
+        <div class="new_shrxx_content">
+          <div class="new_order_fl_form" id="rr">
+            <div class="diviosion" id="receiver">
+              <div id="b2c-checkout-recaddr-list"></div>
+              <div id="checkout-recaddr">
+                <style>
+                  .diviosion div,
+                  .diviosion li {
+                    line-height: 30px !important;
+                  }
+
+                  #checkout-recaddr {}
+
+                  #checkout-recaddr table {
+                    *border: 1px #ccc solid !important;
+                    _border: 0 !important;
+                  }
+
+
+                  .section {
+                    background: #FAFAFA
+                  }
+
+                  .tableform th {
+                    padding-right: 0px !important;
+                  }
+
+                  .font-red {
+                    color: red;
+                  }
+                </style>
+                <div id="other_addr_edit">
+                  <table width="100%" cellpadding="0" cellspacing="0" class="tableform"
+                    style="margin-left:0px!important;">
+                    <tbody>
+                      <tr>
+                        <th style="text-align:right"><em class="font-red">*</em>收货人姓名：</th>
+                        <td colspan="2"><input autocomplete="off" class="x-input inputstyle orders_input" onblur=""
+                            name="delivery[ship_name]" size="15" id="name" vtype="required" type="text" maxlength="10">
+                          <span style="display:none;" id="order_tishi1">请输入收货人姓名</span></td>
+                      </tr>
+
+                      <tr>
+                        <th style="text-align:right"><em class="font-red">*</em>收货人地区：</th>
+                        <td colspan="2">
+                          <span id="checkout-select-area"><span package="mainland" class="span _x_ipt"
+                              vtype="area"><input id="shipping-area" type="hidden" name="delivery[ship_area]">
+                              <div class="city-picker-selector" id="city-picker-search">
+                                <div class="selector-item storey province">
+                                  <a href="javascript:;" class="selector-name reveal df-color ">请选择省份</a>
+                                  <input type="hidden" name="userProvinceId" class="input-price val-error" value=""
+                                    data-required="userProvinceId">
+                                  <div class="selector-list listing hide">
+                                    <div class="selector-search">
+                                      <input type="text" class="input-search" value="" placeholder="拼音、中文搜索">
+                                    </div>
+                                    <ul>
+                                      <li>北京市</li>
+                                      <li>天津市</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="selector-item storey city">
+                                  <a href="javascript:;" class="selector-name reveal df-color forbid">请选择城市</a>
+                                  <input type="hidden" name="userCityId" class="input-price val-error" value=""
+                                    data-required="userCityId">
+                                  <div class="selector-list listing hide">
+                                    <div class="selector-search">
+                                      <input type="text" class="input-search" value="" placeholder="拼音、中文搜索">
+                                    </div>
+                                    <ul></ul>
+                                  </div>
+                                </div>
+                                <div class="selector-item storey district">
+                                  <a href="javascript:;" class="selector-name reveal df-color forbid">请选择区县</a>
+                                  <input type="hidden" name="userDistrictId" class="input-price val-error" value=""
+                                    data-required="userDistrictId">
+                                  <div class="selector-list listing hide">
+                                    <div class="selector-search">
+                                      <input type="text" class="input-search" value="" placeholder="拼音、中文搜索">
+                                    </div>
+                                    <ul></ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </span> <span class="L_Warining"></span><span id="order_tishi2"
+                              style="display:none;">请输入收货地区</span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th style="text-align:right"><em class="font-red">*</em>收货人地址：</th>
+                        <td>
+                          <input type="hidden" name="delivery[ship_addr_area]" value="" id="selected-area-hidden">
+                          <span id="selected-area" class="font-gray" title="系统将拼接地区选择结果到收获地址">[地区]</span>
+                          <input autocomplete="off" class="x-input inputstyle" name="delivery[ship_addr]"
+                            onclick="tishi2()" onblur="tishi3()" id="addr" vtype="required" size="50" maxlength="50"
+                            type="text">
+                          <span style="display:none;" id="order_tishi3">请输入收货地址</span>
+                          <p style="color:red;">（为了更快的让您收到货物，请填写收货地址时尽量详细一些，比如xx路，xx街，xx小区等等）
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th style="text-align:right">邮编：</th>
+                        <td>
+                          <input autocomplete="off" class="x-input inputstyle orders_input" onblur="tishi5()"
+                            name="delivery[ship_zip]" size="15" id="zip" type="text" maxlength="6" vtype="text"> <span
+                            id="order_tishi5" style="display:none;">请输入邮政编码</span>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <th style="text-align:right">
+                          <em class="font-red">*</em>手机： </th>
+                        <td colspan="2">
+                          <input autocomplete="off" class="x-input inputstyle" name="delivery[ship_mobile]" size="15"
+                            type="text" id="mobile" maxlength="11" vtype="text">　<span> 固定电话：<input autocomplete="off"
+                              class="x-input inputstyle" name="delivery[ship_tel]" size="15" type="text"
+                              onchange="tishi4()" id="tel" vtype="text"> <input type="hidden"
+                              vtype="mobile_or_phone"><span style="color:red;">（手机和固定电话请至少填写一项）</span> <span
+                              style="display:none;" id="order_tishi4">请输入电话号码</span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th style="text-align:right">
+                          送货时间：
+                        </th>
+                        <td colspan="2">
+                          <select class="" name="delivery[day]">
+                            <option selected="selected" value="工作日、双休日与假日均可送货">
+                              工作日、双休日与假日均可送货</option>
+                            <option value="只工作日送货(双休日、假日不用送)">只工作日送货(双休日、假日不用送)</option>
+                            <option value="只双休日、假日送货(工作日不用送)">只双休日、假日送货(工作日不用送)</option>
+                          </select>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="dp_bt_box">
+                <div class="dp_button" id="receiver_addr">确认收货人信息</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  </form>
+
+
+  <!-- //底部 -->
+  <div class="bottom1">
+    <div class="bottom w">
+      <img src="../img/6.png" alt="">
+    </div>
+  </div>
+</body>
+<script src="../js/jquery.min.js"></script>
+
+<script src="../js/citydata.js"></script>
+<script src="../js/cityPicker-1.0.0.js"></script>
+<script src="../js/cookie.js"></script>
+
+<script>
+  $('#city-picker-search').cityPicker({
+    dataJson: cityData,
+    renderMode: true,
+    search: true,
+    linkage: true
+  });
+</script>
+
+
+</html>
